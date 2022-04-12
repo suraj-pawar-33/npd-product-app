@@ -6,9 +6,18 @@ import com.apps.digiple.npdapp.view.AppWindow;
 
 public class AppExecuter {
 	public static void main(String args[]) {
+		// TODO : use constants
+		String hostName = "";
+		String userName = "";
+		String pass = "";
+		if (args != null && args.length == 3 ) {
+			hostName = args[0];
+			userName = args[1];
+			pass = args[2];
+		}
 		CustLogger.main(null);
 		CustLogger.info("NPD APP Started---------------------------->");
-		DBHelper.createConnection();
+		DBHelper.createConnection(hostName, userName, pass);
 		try {
 			new AppWindow().launchApp(args);
 		} catch (Exception e) {

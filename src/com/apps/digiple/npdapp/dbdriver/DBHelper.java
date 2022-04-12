@@ -21,11 +21,11 @@ public class DBHelper {
 	private static final String OFFLINE = " No connection available : OFFLINE ";
 	static Connection con;
 	private static final Log LOGGER = LogFactory.getLog(DBHelper.class);
-	public static void createConnection() {
+	public static void createConnection(String hostName, String userName, String pass) {
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://192.168.1.17:3306/npddb", "nitin", "Nitin@0707");
-			CustLogger.info("Connected to npddb > 192.168.1.17:3306");
-			LOGGER.info("Connected to npddb > 192.168.1.17:3306");
+			con = DriverManager.getConnection("jdbc:mysql://" + hostName + "/npddb", userName, pass);
+			CustLogger.info("Connected to npddb > " + hostName);
+			LOGGER.info("Connected to npddb > " + hostName);
 		} catch (SQLException e) {
 			CustLogger.error("DBHelper::getConnection > " + OFFLINE +  e.getLocalizedMessage());
 			LOGGER.error(OFFLINE);

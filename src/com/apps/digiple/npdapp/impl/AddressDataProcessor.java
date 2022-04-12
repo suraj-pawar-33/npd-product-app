@@ -11,7 +11,6 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import com.apps.digiple.npdapp.dbdriver.CustLogger;
 import com.apps.digiple.npdapp.models.AddressModel;
-import com.apps.digiple.npdapp.models.BankModel;
 import com.apps.digiple.npdapp.view.AddressDataEditPanel;
 import com.mysql.cj.util.StringUtils;
 
